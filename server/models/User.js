@@ -17,12 +17,11 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minlength: 5,
   },
-  thoughts: [
+  saveCards: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'Card',
     },
   ],
 });
