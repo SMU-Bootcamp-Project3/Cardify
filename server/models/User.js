@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+// const cardSchema = require('./Card');
 
 const userSchema = new Schema({
   username: {
@@ -18,7 +19,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  saveCards: [
+  savedCards: [
+    // cardSchema,
     {
       type: Schema.Types.ObjectId,
       ref: 'Card',
@@ -39,6 +41,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
+// Added cardCount by checking how long savedCards is
+userSchema.virtual('cardCount').get(function(){
+  return this.savedCards.length
+});
 const User = model('User', userSchema);
 
 module.exports = User;
