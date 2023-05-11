@@ -1,12 +1,12 @@
 import './styles'
 import { GreetingCard, MessageContainer, Greeting, MainHeader, SubHeader, Recipient, MessageContent } from './styles'
 
-import mothersDay from '';
-import fathersDay from '';
-import birthday from '';
-import thankYou from '';
-import christmas from '';
-import paperBg from ''
+import mothersDay from '../../images/mothers-day.jpg';
+import fathersDay from '../../images/fathers-day.jpg';
+import birthday from '../../images/birthday.jpg';
+import thankYou from '../../images/thank-you.jpg';
+import christmas from '../../images/christmas.jpg';
+import paperBg from '../../images/paper-bg.jpg'
 
 const font1 = `'Corinthia', cursive`
 const font2 = `'Fuzzy Bubbles', cursive`

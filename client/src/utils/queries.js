@@ -19,3 +19,30 @@ query Me {
     }
   }
 `;
+
+export const QUERY_CARDS = gql`
+query allCards {
+    cards {
+      _id
+      description
+      title
+      image
+      link
+    }
+  }
+`;
+
+export const QUERY_SINGLE_CARD = gql`
+query singleCard($cardId: ID!) {
+    card(cardId: $cardId) {
+      _id
+      description
+      title
+      image
+      link
+    }
+  }
+`;
+
+
+
