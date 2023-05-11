@@ -5,14 +5,14 @@ import { useQuery } from '@apollo/client';
 import Form from '../components/Form/Form';
 import FormModal from '../components/FormModal/FormModal';
 
-import { GET_ME } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(userParam ? GET_ME : GET_ME, {
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
@@ -44,10 +44,9 @@ const Profile = () => {
 
         <div className="col-12 col-md-10 mb-5">
           <FormModal
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
-            showTitle={false}
-            showUsername={false}
+            cards={user.cards}
+            title={`${user.username}'s cards.`}
+            showTitle={true}
           />
         </div>
         {!userParam && (

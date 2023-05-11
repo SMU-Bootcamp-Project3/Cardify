@@ -1,6 +1,4 @@
-
-
-import { gql } from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -15,8 +13,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($email: String!, $password: String!) {
+    addUser(email: $email, password: $password) {
       token
       user {
         _id
@@ -30,7 +28,6 @@ export const ADD_USER = gql`
 export const SAVE_CARD = gql`
   mutation saveCard($input: CardInput!) {
     saveCard(cardData: $input) {
-        username
         email
         cardCount
         savedCards {
@@ -47,7 +44,6 @@ export const SAVE_CARD = gql`
 export const REMOVE_CARD = gql`
     mutation removeCard($cardId: ID!) {
         deleteCard(cardId: $cardId) {
-        username
         email
         cardCount
         savedCardss {

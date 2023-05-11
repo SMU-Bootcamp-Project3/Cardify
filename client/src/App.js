@@ -100,15 +100,29 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
     <div className="App">
+      <Header />
+      <div className="App-header">
       <Routes>
-      <Route 
-                path="/Login"
-                element={<Login />}
-              />
-              <Route 
-                path="/signUpForm"
-                element={<SignUpForm />}
-              />
+      {/* <Route 
+            path="/"
+            element={<Home />}
+          />
+         <Route 
+            path="/Login"
+            element={<Login />}
+          />
+          <Route 
+            path="/SignUpForm"
+            element={<SignUpForm />}
+          />
+           <Route 
+            path="/me"
+            element={<Profile />}
+          />
+           <Route 
+            path="/Profile/:username"
+            element={<Profile />}
+          /> */}
         <Route
           path="/"
           element={ 
@@ -139,7 +153,9 @@ function App() {
               I am protected route
             </ProtectedRoute>
           }/>
-     </Routes>
+      </Routes>
+    </div>
+    <Footer />
     </div>
     </Router>
     </ApolloProvider>
