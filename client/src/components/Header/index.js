@@ -15,7 +15,7 @@ const Header = () => {
          <Link className="text-light" to="/">
            <h1 style={{ fontFamily: `'Fuzzy Bubbles', cursive`}}>Cardify</h1>
          </Link>
-         <p className="m-0">Create and Personalized Cards for your Loved Ones.</p>
+         <p className="m-0">Create and Personalize Cards for your Loved Ones.</p>
        </div>
         <div>
           {Auth.loggedIn() ? (
@@ -38,8 +38,8 @@ const Header = () => {
             </>
           )}
         </div>
-   //   </div>
-   // </header>
+      </div>
+    </header>
   );
 };
 

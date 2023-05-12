@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+// import Auth from '../../utils/auth';
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
