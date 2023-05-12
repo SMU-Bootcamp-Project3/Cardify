@@ -106,15 +106,15 @@ function App() {
       {/* <Route 
             path="/"
             element={<Home />}
-          />
+          />*/}
          <Route 
-            path="/Login"
+            path="/login"
             element={<Login />}
           />
           <Route 
-            path="/SignUpForm"
+            path="/signup"
             element={<SignUpForm />}
-          />
+          />{/*
            <Route 
             path="/me"
             element={<Profile />}
