@@ -9,14 +9,14 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    //<header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-     // <div className="container flex-row justify-space-between-lg justify-center align-center">
-     //   <div>
-     //     <Link className="text-light" to="/">
-     //       <h1 className="m-0">Cardify</h1>
-     //     </Link>
-     //     <p className="m-0">Create and Personlize Cards for your Loved Ones.</p>
-    //    </div>
+    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+     <div className="container flex-row justify-space-between-lg justify-center align-center">
+       <div>
+         <Link className="text-light" to="/">
+           <h1 style={{ fontFamily: `'Fuzzy Bubbles', cursive`}}>Cardify</h1>
+         </Link>
+         <p className="m-0">Create and Personalized Cards for your Loved Ones.</p>
+       </div>
         <div>
           {Auth.loggedIn() ? (
             <>
