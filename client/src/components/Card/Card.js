@@ -9,7 +9,7 @@ import thankYou from '../../images/thank-you-bg.jpg';
 import paperBg from '../../images/olga-thelavart-HZm2XR0whdw-unsplash.jpg'
 
 const font1 = `'Corinthia', cursive`
-const font2 = `'Fuzzy Bubbles', cursive`
+// const font2 = `'Fuzzy Bubbles', cursive`
 const font3 = `'Abel', sans-serif`
 
 const Card = ({ mainHeader, subHeader, cardInfo }) => {
