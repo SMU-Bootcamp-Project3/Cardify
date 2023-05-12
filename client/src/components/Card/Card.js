@@ -1,12 +1,12 @@
 import './styles'
 import { GreetingCard, MessageContainer, Greeting, MainHeader, SubHeader, Recipient, MessageContent } from './styles'
 
-import mothersDay from '../../images/mothers.jpg';
-import fathersDay from '../../images/fathers.jpg';
-import birthday from '../../images/birthday.jpg';
+import christmasImg from '../../images/davies-designs-studio-PvGt65_l0FU-unsplash.jpg';
+import birthdayImg from '../../images/adi-goldstein-Hli3R6LKibo-unsplash.jpg'
+import fathersDayImg from '../../images/tim-mossholder-goIMPtdFmig-unsplash.jpg';
+import mothersDay from '../../images/leonardo-wong-7pGehyH7o64-unsplash.jpg';
 import thankYou from '../../images/thank-you-bg.jpg';
-import christmas from '../../images/christmas.jpg';
-import paperBg from '../../images/paperBg.jpg'
+import paperBg from '../../images/olga-thelavart-HZm2XR0whdw-unsplash.jpg'
 
 const font1 = `'Corinthia', cursive`
 const font2 = `'Fuzzy Bubbles', cursive`
@@ -16,13 +16,13 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
 
     const getCardTemplate = (card) => {
         switch (card.holiday){
-            case 'mothers-day':
+            case 'christmas':
                 return (
-                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : mothersDay }>
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : christmasImg }>
                         <MessageContainer color={"#0B5345"} messageBg={paperBg} marginSetting="3rem auto">
                             <MainHeader headerFont={font3}>Wishing you a </MainHeader>
                             <SubHeader subHeader={font1} fontSize='4rem'>
-                                Happy Mother's Day
+                                Merry Christmas
                             </SubHeader>
                             <Greeting>
                                 Hey {card.senderName},
@@ -32,9 +32,9 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         </MessageContainer>
                     </GreetingCard>
                 );
-            case 'fathers-day':
+            case 'birthday':
                 return (
-                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : fathersDay}>
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : birthdayImg}>
                         <MessageContainer messageBg={paperBg} color="#BF9BCA">
                         <MainHeader headerFont={font3}>Wishing you a</MainHeader>
                             <SubHeader subHeader={font1} fontSize='4rem'>
@@ -50,13 +50,13 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         </MessageContainer>
                     </GreetingCard>
             );
-            case 'birthday':
+            case 'mothers-day':
                 return (
-                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : birthday}>
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : mothersDay}>
                         <MessageContainer messageBg={paperBg} marginSetting="3rem 0" color="#DE7BC6">
                         <MainHeader headerFont={font3}>Wishing you a</MainHeader>
                             <SubHeader subHeader={font1} fontSize='3rem'>
-                                Thank You
+                                Happy Mothers Day
                             </SubHeader>
                             <Greeting>
                                 Hey {card.senderName},
@@ -66,13 +66,13 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         </MessageContainer>
                     </GreetingCard>
             );
-            case 'christmas':
+            case 'fathers-day':
                 return (
-                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : christmas}>
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : fathersDayImg}>
                         <MessageContainer messageBg={paperBg} marginSetting="20rem auto 1rem" color="#923846">
                         <MainHeader headerFont={font3}>Wishing you a Happy</MainHeader>
                             <SubHeader subHeader={font1} fontSize="5rem">
-                                Merry Christmas
+                                Fathers Day
                             </SubHeader>
                             <Greeting>
                                 Hey {card.senderName},
