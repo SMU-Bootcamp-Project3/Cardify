@@ -26,7 +26,7 @@ const Footer = () => {
           >
             ❤️
           </span>{' '}
-          by Cardify team.
+          by Cardify
         </h4>
       </div>
     </footer>
