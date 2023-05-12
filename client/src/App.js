@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { useState, useEffect } from 'react'
 import {Button} from "react-bootstrap"
-// import './App.css';
+import './App.css'
 
 import Home from './pages/Home';
 import SignUpForm from './pages/SignUpForm';
