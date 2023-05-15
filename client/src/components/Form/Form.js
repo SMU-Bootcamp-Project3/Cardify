@@ -1,4 +1,3 @@
-
 import { FormLabel, FormInput, FormHeader, DownLoad, Submit } from './styles';
 import { useLocation } from "react-router-dom";
 import { useState } from 'react';
@@ -121,7 +120,7 @@ const handleSubmit = (event) => {
                     </FormLabel>
                 </div>
                 <div>
-                    <FormLabel>
+                    <FormLabel>npm
                         <FormInput 
                         type="radio" value="wedding" name="holiday"
                         onChange={handleInputChange} 
