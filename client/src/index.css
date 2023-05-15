@@ -33,7 +33,7 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-  font-size: 2em;
+  font-size:em;
   margin: 0.67em 0;
 }
 
@@ -897,7 +897,7 @@ a:hover {
 }
 
 .text-light {
-  color: #d9e9e8 !important;
+  color: #e726a6 !important;
 }
 
 .text-dark {
@@ -918,15 +918,15 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: white !important;
 }
 
 .bg-info {
-  background-color: #eac0e1 !important;
+  background-color: #a996a5 !important;
 }
 
 .bg-danger {
-  background-color: #e64c66 !important;
+  background-color: #e7d4d7 !important;
 }
 
 .bg-light {
@@ -1028,21 +1028,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
+  background-color: #84b8b4;
   color: #ffffff;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #d9d9d9;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #84b8b4;
+  color: #ffffff;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #d9d9d9;
 }
 
 .btn.btn-dark {
@@ -1110,7 +1110,7 @@ a:hover {
 }
 
 footer {
-  background-color: #eac0e1;
+  background-color: white;
 }
 form {
   width: 100%;
