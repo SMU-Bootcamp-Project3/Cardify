@@ -1,12 +1,12 @@
 import './styles'
 import { GreetingCard, MessageContainer, Greeting, MainHeader, SubHeader, Recipient, MessageContent } from './styles'
 
-import christmasImg from '../../images/davies-designs-studio-PvGt65_l0FU-unsplash.jpg';
-import birthdayImg from '../../images/adi-goldstein-Hli3R6LKibo-unsplash.jpg'
-import fathersDayImg from '../../images/tim-mossholder-goIMPtdFmig-unsplash.jpg';
-import mothersDay from '../../images/leonardo-wong-7pGehyH7o64-unsplash.jpg';
+import christmasImg from '../../images/christmas.jpg';
+import birthdayImg from '../../images/birthday.jpg'
+import fathersDayImg from '../../images/fathers.jpg';
+import mothersDay from '../../images/mothers.jpg';
 import thankYou from '../../images/thank-you-bg.jpg';
-import paperBg from '../../images/olga-thelavart-HZm2XR0whdw-unsplash.jpg'
+import paperBg from '../../images/paperBg.jpg'
 
 const font1 = `'Corinthia', cursive`
 // const font2 = `'Fuzzy Bubbles', cursive`
@@ -25,7 +25,7 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                                 Merry Christmas
                             </SubHeader>
                             <Greeting>
-                                Hey {card.recipientName},
+                                Dear {card.recipientName},
                             </Greeting>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
                             <Recipient>- {card.senderName}</Recipient>
@@ -41,7 +41,7 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                                 Happy Birthday
                             </SubHeader>
                             <Greeting>
-                                Hey {card.recipientName},
+                                Dear {card.recipientName},
                             </Greeting>
                             <MessageContent>
                               {card.messageType === 'custom' ? card.customMessage : card.message}  
@@ -56,10 +56,10 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         <MessageContainer messageBg={paperBg} marginSetting="3rem 0" color="#DE7BC6">
                         <MainHeader headerFont={font3}>Wishing you a</MainHeader>
                             <SubHeader subHeader={font1} fontSize='3rem'>
-                                Happy Mothers Day
+                                Happy Mother's Day
                             </SubHeader>
                             <Greeting>
-                                Hey {card.recipientName},
+                                Dear {card.recipientName},
                             </Greeting>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
                             <Recipient>- {card.senderName}</Recipient>
@@ -72,10 +72,10 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         <MessageContainer messageBg={paperBg} marginSetting="20rem auto 1rem" color="#923846">
                         <MainHeader headerFont={font3}>Wishing you a Happy</MainHeader>
                             <SubHeader subHeader={font1} fontSize="5rem">
-                                Fathers Day
+                                Father's Day
                             </SubHeader>
                             <Greeting>
-                                Hey {card.recipientName},
+                                Dear {card.recipientName},
                             </Greeting>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
                             <Recipient>- {card.senderName}</Recipient>
@@ -95,12 +95,51 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         </MessageContainer>
                     </GreetingCard>
             );
+            case 'anniversary':
+                return (
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : thankYou}>
+                        <MessageContainer messageBg={paperBg} marginSetting="12rem 0 3rem" color="#895C4B">
+                        <MainHeader headerFont={font1} fontSize="5rem">Wishing you a Happy</MainHeader>
+                            <SubHeader>
+                            {card.recipientName}
+                            </SubHeader>
+                            {card.messageType === 'custom' ? card.customMessage : card.message}
+                            <Recipient>- {card.senderName}</Recipient>
+                        </MessageContainer>
+                    </GreetingCard>
+            );
+            case 'wedding':
+                return (
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : thankYou}>
+                        <MessageContainer messageBg={paperBg} marginSetting="12rem 0 3rem" color="#895C4B">
+                        <MainHeader headerFont={font1} fontSize="5rem">Wishing you a Happy</MainHeader>
+                            <SubHeader>
+                            {card.recipientName}
+                            </SubHeader>
+                            {card.messageType === 'custom' ? card.customMessage : card.message}
+                            <Recipient>- {card.senderName}</Recipient>
+                        </MessageContainer>
+                    </GreetingCard>
+            );
+            case 'graduation':
+                return (
+                    <GreetingCard bgImg={cardInfo.imageUpload ? cardInfo.imageUpload : thankYou}>
+                        <MessageContainer messageBg={paperBg} marginSetting="12rem 0 3rem" color="#895C4B">
+                        <MainHeader headerFont={font1} fontSize="5rem">Wishing you a Happy</MainHeader>
+                            <SubHeader>
+                            {card.recipientName}
+                            </SubHeader>
+                            {card.messageType === 'custom' ? card.customMessage : card.message}
+                            <Recipient>- {card.senderName}</Recipient>
+                        </MessageContainer>
+                    </GreetingCard>
+            );
             default: 
             <div></div>
         }
     }
     return (
-        <div style={{marginTop: '2rem'}}>
+        <div style={{marginTop: '1rem'}}>
             {getCardTemplate(cardInfo)}
         </div>
         // <div className="card-container">
