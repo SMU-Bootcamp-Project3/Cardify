@@ -1,21 +1,26 @@
 import React from 'react';
+import { useState, useEffect } from 'react'
+// import {Button} from "react-bootstrap"
+import './App.css';
+
 import { ApolloClient, InMemoryCache, createHttpLink, ApolloProvider} from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Shop } from "./pages/shop/shop";
+import { Contact } from "./pages/contact";
+import { Cart } from "./pages/cart/cart";
+import { ShopContextProvider } from "./context/shop-context";
 
-// import { useState, useEffect } from 'react'
-// import {Button} from "react-bootstrap"
-import './App.css'
 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import SignUpForm from './pages/SignUpForm';
 import Login from './pages/Login';
-// import Profile from './pages/Profile';
+import Profile from './pages/Profile';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
-// import Form from './components/Form/Form';
 // import FormModal from './components/FormModal/FormModal'
-
+import Form from './components/Form/Form';
+// import {Stripe} from './pages/api/stripe'
 
 // import Card from './components/Card/Card'
 import { ProtectedRoute } from './components/ProtectedRoute';
@@ -27,7 +32,7 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
 
-  const token = localStorage.getItem('id_token');
+  const token = sessionStorage.getItem('id_token');
 
   return {
     headers: {
@@ -43,69 +48,73 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
-//   const [ showModal, setShowModal ] = useState(false)
-//   const [ cardDetails, setCardDetails ] = useState({
-//     holiday: '',
-//     senderName: '',
-//     recipientName: '',
-//     customMessage: '',
-//     message: 'Happy Holidays',
-//     messageType: '',
-//     imageUpload: ''
-//   })
+  const [ showModal, setShowModal ] = useState(false)
+  const [ cardDetails, setCardDetails ] = useState({
+    holiday: '',
+    senderName: '',
+    recipientName: '',
+    customMessage: '',
+    message: 'Best Wishes',
+    messageType: '',
+    imageUpload: ''
+  })
 
-//   const handleUpload = (event) => {
-//     console.log(event.target.files[0].name)
-//     setCardDetails({
-//       ...cardDetails, 
-//       imageUpload: URL.createObjectURL(event.target.files[0])
-//     })
-// }
+  const handleUpload = (event) => {
+    console.log(event.target.files[0].name)
+    setCardDetails({
+      ...cardDetails, 
+      imageUpload: URL.createObjectURL(event.target.files[0])
+    })
+}
 
-//   const handleInputChange = (event) => {
-//     setCardDetails({
-//       ...cardDetails,
-//       [event.target.name]: event.target.value
-//     })
-//   }
+  const handleInputChange = (event) => {
+    setCardDetails({
+      ...cardDetails,
+      [event.target.name]: event.target.value
+    })
+  }
 
-//   const handleShow = () => {
-//     setShowModal(true)
-//   }
+  const handleShow = () => {
+    setShowModal(true)
+  }
 
-//   useEffect(() => {
-//     // setShowModal(true)
-//   }, [])
+  useEffect(() => {
+    // setShowModal(true)
+  }, [])
 
-//   const closeModal = () => {
-//     setShowModal(false)
-//   }
+  const closeModal = () => {
+    setShowModal(false)
+  }
 
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-//     setShowModal(false)
-//     // Submit form data and redirect to page with the greeting card component displayed
-//     setCardDetails({
-//       ...cardDetails,
-//       [event.target.name]: event.target.value
-//     })
+    setShowModal(false)
+    // Submit form data and redirect to page with the greeting card component displayed
+    setCardDetails({
+      ...cardDetails,
+      [event.target.name]: event.target.value
+    })
 
-//     console.log(cardDetails)  
-//   }
+    console.log(cardDetails)  
+  }
 
   return (
     <ApolloProvider client={client}>
+      <ShopContextProvider>
     <Router>
     <div className="App">
       <Header />
       <div className="App-header">
       <Routes>
-          <Route 
+      {/* <Route 
             path="/"
             element={<Home />}
+          /> */}
+      <Route 
+            path="/contact"
+            element={<Contact />}
           />
          <Route 
             path="/login"
@@ -114,15 +123,27 @@ function App() {
           <Route 
             path="/signup"
             element={<SignUpForm />}
-          />{/*
-           <Route 
+          />
+          <Route 
             path="/me"
             element={<Profile />}
           />
            <Route 
-            path="/Profile/:username"
-            element={<Profile />}
-          /> */}
+            path="/"
+            element={<Shop />}
+          />
+           <Route 
+            path="/cart"
+            element={<Cart />}
+            />
+           <Route 
+            path="/form"
+            element={<Form />}
+          /> 
+           {/* <Route 
+            path="/stripe"
+            element={<Stripe/>}
+          />  */}
         {/* <Route
           path="/"
           element={ 
@@ -158,8 +179,10 @@ function App() {
     <Footer />
     </div>
     </Router>
+    </ShopContextProvider>
     </ApolloProvider>
   );
 }
 
 export default App;
+
