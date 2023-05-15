@@ -25,10 +25,10 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                                 Merry Christmas
                             </SubHeader>
                             <Greeting>
-                                Hey {card.senderName},
+                                Hey {card.recipientName},
                             </Greeting>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
-                            <Recipient>- {card.recipientName}</Recipient>
+                            <Recipient>- {card.senderName}</Recipient>
                         </MessageContainer>
                     </GreetingCard>
                 );
@@ -41,12 +41,12 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                                 Happy Birthday
                             </SubHeader>
                             <Greeting>
-                                Hey {card.senderName},
+                                Hey {card.recipientName},
                             </Greeting>
                             <MessageContent>
                               {card.messageType === 'custom' ? card.customMessage : card.message}  
                             </MessageContent>
-                            <Recipient>- {card.recipientName}</Recipient>
+                            <Recipient>- {card.senderName}</Recipient>
                         </MessageContainer>
                     </GreetingCard>
             );
@@ -59,10 +59,10 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                                 Happy Mothers Day
                             </SubHeader>
                             <Greeting>
-                                Hey {card.senderName},
+                                Hey {card.recipientName},
                             </Greeting>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
-                            <Recipient>- {card.recipientName}</Recipient>
+                            <Recipient>- {card.senderName}</Recipient>
                         </MessageContainer>
                     </GreetingCard>
             );
@@ -75,10 +75,10 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                                 Fathers Day
                             </SubHeader>
                             <Greeting>
-                                Hey {card.senderName},
+                                Hey {card.recipientName},
                             </Greeting>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
-                            <Recipient>- {card.recipientName}</Recipient>
+                            <Recipient>- {card.senderName}</Recipient>
                         </MessageContainer>
                     </GreetingCard>
             );
@@ -88,10 +88,10 @@ const Card = ({ mainHeader, subHeader, cardInfo }) => {
                         <MessageContainer messageBg={paperBg} marginSetting="12rem 0 3rem" color="#895C4B">
                         <MainHeader headerFont={font1} fontSize="5rem">I appreciate you</MainHeader>
                             <SubHeader>
-                            {card.senderName}
+                            {card.recipientName}
                             </SubHeader>
                             {card.messageType === 'custom' ? card.customMessage : card.message}
-                            <Recipient>- {card.recipientName}</Recipient>
+                            <Recipient>- {card.senderName}</Recipient>
                         </MessageContainer>
                     </GreetingCard>
             );
