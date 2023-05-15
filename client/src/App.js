@@ -7,10 +7,10 @@ import { useState, useEffect } from 'react'
 import {Button} from "react-bootstrap"
 import './App.css'
 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import SignUpForm from './pages/SignUpForm';
 import Login from './pages/Login';
-import Profile from './pages/Profile';
+// import Profile from './pages/Profile';
 import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Form from './components/Form/Form';
