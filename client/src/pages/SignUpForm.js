@@ -36,6 +36,7 @@ const SignUpForm = () => {
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
+      console.log("Please try again.");
     }
   };
 
@@ -89,6 +90,8 @@ const SignUpForm = () => {
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}
+                <br />
+                Please try again.
               </div>
             )}
           </div>
