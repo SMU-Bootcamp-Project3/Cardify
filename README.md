@@ -6,9 +6,9 @@
 
 -This application allows Users to generate "post-card" style greetings composed of an image on the front, and personalized text on the back. 
 
--Upon opening the application Homepage, Users will be given the option to create a new card. If they are not logged-in, choosing this option will prompt Users to either log-in or create an account by redirecting them to the Login page.
+-Upon opening the application Homepage, Users will see available options for card styles. These card components and front end components are rendered with REACT. Page routes are created and rendered using GraphQL funcationality. Choosing a card will add it to their cart for future review.
 
--Once logged-in, Users will be taken to their Account page, where they can review saved cards, make edits, delete cards, and create new cards.
+-Once logged-in and authenticated with JWT funcationality, Users will be able to review saved cards, make edits, delete cards, and create new cards. Card information and User information is stored using MongoDB.
 
 -By clicking on saved cards, the content will be loaded into the Template/Editor page.
 
@@ -20,21 +20,38 @@
 
 ## Usage
 
-Application is deployed live at the following link:
+Cardify is deployed live through [Heroku](https://floating-brushlands-04245.herokuapp.com/)
 
-[Heroku Deployment]()
+[Project GitHub Repository](https://github.com/SMU-Bootcamp-Project3/Cardify)
 
-## Page Screenshots
+## Presentation
 
-[Home Page Screenshot]()
+[Cardify Prezi](https://prezi.com/view/SWDGFUOhTcHr55TIMPn2/)
 
-[Login Page Screenshot]()
+## Page Screenshots (UPDATE AFTER LAST PULL!)
 
-[Account Page Screenshot]()
+[Home Page Screenshot](/client/public/images/CardifyHomePage.png)
 
-[Card Template Page Screenshot]()
+[Login Page Screenshot](/client/public/images/CardifyLoginPage.png)
 
-[Payment Page Screenshot]()
+[Sign-Up Page Screenshot](/client/public/images/CardifySignUpPage.png)
+
+[Card Form Page Screenshot](/client/public/images/CardifyCardForm.png)
+
+## Team Members
+
+[Christopher Uffman, GitHub Respository](https://github.com/anuffisenough)
+
+[Giuliana Chavez, GitHub Respository](https://github.com/gj3chavez)
+
+[Valerie Robles, GitHub Respository](https://github.com/valerierobles)
+
+[Tom Miyahira, GitHub Respository](https://github.com/v-tommi)
 
 ## Credits
 
+[Greeting Card Generator Tutorial](https://www.youtube.com/watch?v=zC0ib6JPvfY)
+
+[Heroku Deployment Blog](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)
+
+[GraphQL Documentation](https://drupal-graphql.gitbook.io/graphql/)
