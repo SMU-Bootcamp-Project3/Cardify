@@ -28,7 +28,7 @@ Cardify is deployed live through [Heroku](https://floating-brushlands-04245.hero
 
 [Cardify Prezi](https://prezi.com/view/SWDGFUOhTcHr55TIMPn2/)
 
-## Page Screenshots (UPDATE AFTER LAST PULL!)
+## Page Screenshots
 
 [Home Page Screenshot](/client/public/images/CardifyHomePage.png)
 
