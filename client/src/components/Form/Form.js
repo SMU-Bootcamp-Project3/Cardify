@@ -1,47 +1,5 @@
+
 import { FormLabel, FormInput, FormHeader, DownLoad, Submit } from './styles';
-import { useLocation } from "react-router-dom";
-import { useState } from 'react';
-
-const Form = (props) => {
-    const { state } = useLocation();
-  
-    const [ showModal, setShowModal ] = useState(false)
-
-  const [ cardDetails, setCardDetails ] = useState({
-    holiday: '',
-    senderName: '',
-    recipientName: '',
-    customMessage: '',
-    message: 'Best Wishes',
-    messageType: '',
-    imageUpload: ''
-  })
-
-  const handleInputChange = (event) => {
-    setCardDetails({
-      ...cardDetails,
-      [event.target.name]: event.target.value
-    })
-  }
-  const handleUpload = (event) => {
-    console.log(event.target.files[0].name)
-    setCardDetails({
-      ...cardDetails, 
-      imageUpload: URL.createObjectURL(event.target.files[0])
-    })
-}
-const handleSubmit = (event) => {
-    event.preventDefault();
-
-    setShowModal(false)
-    // Submit form data and redirect to page with the greeting card component displayed
-    setCardDetails({
-      ...cardDetails,
-      [event.target.name]: event.target.value
-    })
-
-    console.log(cardDetails)  
-  }
 import { useLocation } from "react-router-dom";
 import { useState } from 'react';
 
@@ -163,7 +121,7 @@ const handleSubmit = (event) => {
                     </FormLabel>
                 </div>
                 <div>
-                    <FormLabel>npm
+                    <FormLabel>
                         <FormInput 
                         type="radio" value="wedding" name="holiday"
                         onChange={handleInputChange} 
